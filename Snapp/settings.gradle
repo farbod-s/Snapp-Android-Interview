@@ -1,3 +1,4 @@
+include ':cache'
 include ':data'
 include ':domain'
 include ':app'
