@@ -1,4 +1,4 @@
-package com.snapp.domain
+package com.snapp.domain.model
 
 /**
  * Representation for a [Vehicle] fetched from an external layer data source
