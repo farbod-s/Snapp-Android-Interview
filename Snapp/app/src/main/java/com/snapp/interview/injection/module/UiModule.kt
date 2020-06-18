@@ -4,6 +4,7 @@ import com.snapp.domain.executor.PostExecutionThread
 import com.snapp.interview.executor.UiThread
 import com.snapp.interview.ui.MainActivity
 import com.snapp.interview.ui.browse.BrowseFragment
+import com.snapp.interview.ui.map.MapFragment
 import dagger.Binds
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -22,4 +23,7 @@ abstract class UiModule {
 
     @ContributesAndroidInjector
     abstract fun provideListFragment(): BrowseFragment
+
+    @ContributesAndroidInjector
+    abstract fun provideMapFragment(): MapFragment
 }
