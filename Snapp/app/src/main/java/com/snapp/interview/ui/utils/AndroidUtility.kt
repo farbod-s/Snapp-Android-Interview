@@ -1,4 +1,4 @@
-package com.snapp.interview.utils
+package com.snapp.interview.ui.utils
 
 import android.content.Context
 
