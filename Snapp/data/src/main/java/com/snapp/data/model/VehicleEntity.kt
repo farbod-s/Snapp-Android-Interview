@@ -1,4 +1,4 @@
-package com.snapp.data
+package com.snapp.data.model
 
 /**
  * Representation for a [VehicleEntity] fetched from an external layer data source
