@@ -1,0 +1,7 @@
+include ':presentation'
+include ':remote'
+include ':cache'
+include ':data'
+include ':domain'
+include ':app'
+rootProject.name = "Snapp"

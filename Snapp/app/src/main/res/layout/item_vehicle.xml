@@ -1,0 +1,55 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="vehicle"
+            type="com.snapp.presentation.model.VehicleView" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/size_normal">
+
+        <ImageView
+            android:id="@+id/vehicle_image"
+            imageUrl="@{vehicle.imageUrl}"
+            android:layout_width="@dimen/size_huge"
+            android:layout_height="@dimen/size_huge"
+            android:contentDescription="@{vehicle.type}"
+            android:scaleType="fitCenter" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/size_normal"
+            android:layout_marginLeft="@dimen/size_normal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/vehicle_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="@{vehicle.type}"
+                android:textColor="@color/textTitle"
+                android:textSize="@dimen/text_large_body" />
+
+            <TextView
+                android:id="@+id/vehicle_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="@{@string/label_location(vehicle.lat, vehicle.lng)}"
+                android:textColor="@color/textBody"
+                android:textSize="@dimen/text_smaller_body" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
