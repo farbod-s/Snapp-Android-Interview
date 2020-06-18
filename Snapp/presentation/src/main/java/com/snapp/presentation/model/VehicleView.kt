@@ -1,4 +1,4 @@
-package com.snapp.presentation
+package com.snapp.presentation.model
 
 /**
  * Representation for a [VehicleView] instance for this layers Model representation
