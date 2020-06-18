@@ -1,4 +1,4 @@
-package com.snapp.remote
+package com.snapp.remote.model
 
 import com.google.gson.annotations.SerializedName
 
