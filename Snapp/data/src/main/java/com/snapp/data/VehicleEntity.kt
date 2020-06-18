@@ -1,4 +1,13 @@
 package com.snapp.data
 
-class VehicleEntity {
-}
+/**
+ * Representation for a [VehicleEntity] fetched from an external layer data source
+ */
+data class VehicleEntity(
+    val id: Int,
+    val type: String,
+    val lat: Double,
+    val lng: Double,
+    val bearing: Int,
+    val imageUrl: String
+)
