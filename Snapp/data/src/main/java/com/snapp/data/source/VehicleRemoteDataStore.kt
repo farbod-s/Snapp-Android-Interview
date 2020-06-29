@@ -12,7 +12,7 @@ import javax.inject.Inject
  * Implementation of the [VehicleRemote] interface to provide a means of communicating
  * with the remote data source
  */
-class VehicleRemoteDataStore @Inject constructor(
+open class VehicleRemoteDataStore @Inject constructor(
     private val vehicleRemote: VehicleRemote
 ) :
     VehicleDataStore {

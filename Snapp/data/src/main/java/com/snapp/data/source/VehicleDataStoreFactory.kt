@@ -7,7 +7,7 @@ import javax.inject.Inject
 /**
  * Create an instance of a VehicleDataStore
  */
-class VehicleDataStoreFactory @Inject constructor(
+open class VehicleDataStoreFactory @Inject constructor(
     private val vehicleCache: VehicleCache,
     private val vehicleCacheDataStore: VehicleCacheDataStore,
     private val vehicleRemoteDataStore: VehicleRemoteDataStore
@@ -17,7 +17,7 @@ class VehicleDataStoreFactory @Inject constructor(
      * Returns a DataStore based on whether or not there is content in the cache and the cache
      * has not expired
      */
-    fun retrieveDataStore(isCached: Boolean): VehicleDataStore {
+    open fun retrieveDataStore(isCached: Boolean): VehicleDataStore {
         if (isCached && !vehicleCache.isExpired()) {
             return retrieveCacheDataStore()
         }
@@ -27,14 +27,14 @@ class VehicleDataStoreFactory @Inject constructor(
     /**
      * Return an instance of the Cache Data Store
      */
-    fun retrieveCacheDataStore(): VehicleDataStore {
+    open fun retrieveCacheDataStore(): VehicleDataStore {
         return vehicleCacheDataStore
     }
 
     /**
      * Return an instance of the Remote Data Store
      */
-    fun retrieveRemoteDataStore(): VehicleDataStore {
+    open fun retrieveRemoteDataStore(): VehicleDataStore {
         return vehicleRemoteDataStore
     }
 }
