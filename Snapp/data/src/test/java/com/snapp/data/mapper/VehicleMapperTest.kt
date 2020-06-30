@@ -41,8 +41,6 @@ class VehicleMapperTest {
     ) {
         assertEquals(vehicleEntity.id, vehicle.id)
         assertEquals(vehicleEntity.type, vehicle.type)
-        assertEquals(vehicleEntity.lat, vehicle.lat)
-        assertEquals(vehicleEntity.lng, vehicle.lng)
         assertEquals(vehicleEntity.bearing, vehicle.bearing)
         assertEquals(vehicleEntity.imageUrl, vehicle.imageUrl)
     }

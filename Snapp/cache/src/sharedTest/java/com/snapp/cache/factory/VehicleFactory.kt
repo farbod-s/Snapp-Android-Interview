@@ -6,50 +6,47 @@ import com.snapp.data.model.VehicleEntity
 /**
  * Factory class for Vehicle related instances
  */
-class VehicleFactory {
+object VehicleFactory {
 
-    companion object Factory {
+    fun generateVehicleEntity(): VehicleEntity {
+        return VehicleEntity(
+            DataFactory.randomInt(),
+            DataFactory.randomType(),
+            DataFactory.randomLatitude(),
+            DataFactory.randomLongitude(),
+            DataFactory.randomInt(),
+            DataFactory.randomImage()
+        )
+    }
 
-        fun generateVehicleEntity(): VehicleEntity {
-            return VehicleEntity(
-                DataFactory.randomInt(),
-                DataFactory.randomType(),
-                DataFactory.randomLatitude(),
-                DataFactory.randomLongitude(),
-                DataFactory.randomInt(),
-                DataFactory.randomImage()
-            )
+    fun generateVehicleEntityList(count: Int): List<VehicleEntity> {
+        val entities = mutableListOf<VehicleEntity>()
+        repeat(count) {
+            entities.add(generateVehicleEntity())
         }
+        return entities
+    }
 
-        fun generateVehicleEntityList(count: Int): List<VehicleEntity> {
-            val entities = mutableListOf<VehicleEntity>()
-            repeat(count) {
-                entities.add(generateVehicleEntity())
-            }
-            return entities
+    fun generateCachedVehicles(count: Int): List<CachedVehicle> {
+        val vehicles = mutableListOf<CachedVehicle>()
+        repeat(count) {
+            vehicles.add(createCachedVehicle())
         }
+        return vehicles
+    }
 
-        fun generateCachedVehicles(count: Int): List<CachedVehicle> {
-            val vehicles = mutableListOf<CachedVehicle>()
-            repeat(count) {
-                vehicles.add(createCachedVehicle())
-            }
-            return vehicles
-        }
+    fun generateCachedVehicle(): CachedVehicle {
+        return createCachedVehicle()
+    }
 
-        fun generateCachedVehicle(): CachedVehicle {
-            return createCachedVehicle()
-        }
-
-        private fun createCachedVehicle(): CachedVehicle {
-            return CachedVehicle(
-                DataFactory.randomInt(),
-                DataFactory.randomType(),
-                DataFactory.randomLatitude(),
-                DataFactory.randomLongitude(),
-                DataFactory.randomInt(),
-                DataFactory.randomImage()
-            )
-        }
+    private fun createCachedVehicle(): CachedVehicle {
+        return CachedVehicle(
+            DataFactory.randomInt(),
+            DataFactory.randomType(),
+            DataFactory.randomLatitude(),
+            DataFactory.randomLongitude(),
+            DataFactory.randomInt(),
+            DataFactory.randomImage()
+        )
     }
 }

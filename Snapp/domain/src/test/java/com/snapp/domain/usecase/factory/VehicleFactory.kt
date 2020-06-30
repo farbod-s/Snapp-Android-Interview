@@ -10,27 +10,24 @@ import com.snapp.domain.usecase.factory.DataFactory.Factory.randomType
 /**
  * Factory class for Vehicle related instances
  */
-class VehicleFactory {
+object VehicleFactory {
 
-    companion object Factory {
-
-        fun generateVehicles(count: Int): List<Vehicle> {
-            val vehicles = mutableListOf<Vehicle>()
-            repeat(count) {
-                vehicles.add(createVehicle())
-            }
-            return vehicles
+    fun generateVehicles(count: Int): List<Vehicle> {
+        val vehicles = mutableListOf<Vehicle>()
+        repeat(count) {
+            vehicles.add(createVehicle())
         }
+        return vehicles
+    }
 
-        private fun createVehicle(): Vehicle {
-            return Vehicle(
-                randomInt(),
-                randomType(),
-                randomLatitude(),
-                randomLongitude(),
-                randomInt(),
-                randomImage()
-            )
-        }
+    private fun createVehicle(): Vehicle {
+        return Vehicle(
+            randomInt(),
+            randomType(),
+            randomLatitude(),
+            randomLongitude(),
+            randomInt(),
+            randomImage()
+        )
     }
 }
