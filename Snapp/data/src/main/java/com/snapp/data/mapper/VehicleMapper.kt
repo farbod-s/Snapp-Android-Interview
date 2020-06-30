@@ -8,7 +8,7 @@ import javax.inject.Inject
  * Map a [VehicleEntity] to and from a [Vehicle] instance when data is moving between
  * this later and the Domain layer
  */
-class VehicleMapper @Inject constructor() : Mapper<VehicleEntity, Vehicle> {
+open class VehicleMapper @Inject constructor() : Mapper<VehicleEntity, Vehicle> {
 
     /**
      * Map a [VehicleEntity] instance to a [Vehicle] instance

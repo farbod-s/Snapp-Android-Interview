@@ -12,7 +12,7 @@ import javax.inject.Inject
  * Implementation of the [VehicleCache] interface to provide a means of communicating
  * with the local data source
  */
-class VehicleCacheDataStore @Inject constructor(
+open class VehicleCacheDataStore @Inject constructor(
     private val vehicleCache: VehicleCache
 ) :
     VehicleDataStore {
